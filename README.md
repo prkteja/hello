@@ -25,14 +25,8 @@ GStreamer with the base and good plugins, and PulseAudio or PipeWire.
 
 ## Build from source
 
-You need Rust 1.88 or newer. Distro Rust packages are often older, so
-[rustup](https://rustup.rs) is the easiest way to get it:
-
-```sh
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
-```
-
-Then install the build dependencies for your distro.
+You need Rust 1.88 or newer and Cargo, plus the build dependencies for your
+distro:
 
 **Fedora**
 
