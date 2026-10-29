@@ -1,0 +1,18 @@
+[package]
+name = "meetcheck"
+version = "0.1.0"
+edition = "2024"
+
+[dependencies]
+async-channel = "2.5.0"
+gst = { version = "0.24", package = "gstreamer" }
+gst_app = { version = "0.24", package = "gstreamer-app" }
+gst_video = { version = "0.24", package = "gstreamer-video" }
+gtk = { version = "0.10", package = "gtk4", features = ["v4_16"] }
+libpulse-binding = "2"
+libpulse-glib-binding = "2"
+
+[profile.release]
+lto = true
+codegen-units = 1
+strip = true
