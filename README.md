@@ -25,8 +25,46 @@ GStreamer with the base and good plugins, and PulseAudio or PipeWire.
 
 ## Build from source
 
+You need Rust 1.88 or newer. Distro Rust packages are often older, so
+[rustup](https://rustup.rs) is the easiest way to get it:
+
 ```sh
-sudo dnf install gtk4-devel pulseaudio-libs-devel gstreamer1-devel gstreamer1-plugins-base-devel
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+Then install the build dependencies for your distro.
+
+**Fedora**
+
+```sh
+sudo dnf install gcc pkgconf-pkg-config gtk4-devel pulseaudio-libs-devel \
+    gstreamer1-devel gstreamer1-plugins-base-devel gstreamer1-plugins-good
+```
+
+**Ubuntu / Debian / Linux Mint / Pop!_OS** (Ubuntu 22.04 or newer)
+
+```sh
+sudo apt install build-essential pkg-config libgtk-4-dev libpulse-dev \
+    libgstreamer1.0-dev libgstreamer-plugins-base1.0-dev \
+    gstreamer1.0-plugins-good gstreamer1.0-pulseaudio
+```
+
+**Arch / Manjaro / EndeavourOS**
+
+```sh
+sudo pacman -S --needed base-devel gtk4 libpulse \
+    gstreamer gst-plugins-base gst-plugins-good
+```
+
+Then build and install:
+
+```sh
+git clone https://github.com/prkteja/hello.git
+cd hello
 cargo build --release
 ./install.sh
 ```
+
+## License
+
+[MIT](LICENSE)
