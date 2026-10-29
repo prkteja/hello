@@ -2,13 +2,17 @@
 name = "hello"
 version = "0.1.0"
 edition = "2024"
+rust-version = "1.88"
+license = "MIT"
+description = "Check your camera, speaker and microphone before an online meeting"
+repository = "https://github.com/prkteja/hello"
 
 [dependencies]
 async-channel = "2.5.0"
 gst = { version = "0.24", package = "gstreamer" }
 gst_app = { version = "0.24", package = "gstreamer-app" }
 gst_video = { version = "0.24", package = "gstreamer-video" }
-gtk = { version = "0.10", package = "gtk4", features = ["v4_16"] }
+gtk = { version = "0.10", package = "gtk4" }
 libpulse-binding = "2"
 libpulse-glib-binding = "2"
 
