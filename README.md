@@ -10,16 +10,23 @@ A small GTK4 app for checking your setup before an online meeting:
 Changing a speaker or microphone sets the **system default**, so your meeting
 app picks it up as well.
 
-## Build
+## Install from a release
+
+Download `hello-<version>-x86_64-linux.tar.gz` from the
+[releases page](https://github.com/prkteja/hello/releases), then:
+
+```sh
+tar xf hello-*-x86_64-linux.tar.gz
+./hello-*/install.sh
+```
+
+Runtime requirements (preinstalled on most GNOME/Fedora desktops): GTK 4,
+GStreamer with the base and good plugins, and PulseAudio or PipeWire.
+
+## Build from source
 
 ```sh
 sudo dnf install gtk4-devel pulseaudio-libs-devel gstreamer1-devel gstreamer1-plugins-base-devel
 cargo build --release
-```
-
-## Install (per user)
-
-```sh
-install -Dm755 target/release/hello ~/.local/bin/hello
-install -Dm644 data/io.github.hello.desktop ~/.local/share/applications/io.github.hello.desktop
+./install.sh
 ```
