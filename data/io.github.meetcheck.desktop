@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=Application
+Name=Meeting Check
+Comment=Check your camera, speaker and microphone before a call
+Exec=meetcheck
+Icon=camera-web
+Terminal=false
+Categories=AudioVideo;Utility;
+Keywords=camera;webcam;microphone;mic;speaker;audio;test;meeting;call;
