@@ -5,5 +5,5 @@ Comment=Check your camera, speaker and microphone before a call
 Exec=hello
 Icon=camera-web
 Terminal=false
-Categories=AudioVideo;Utility;
+Categories=AudioVideo;Audio;Video;
 Keywords=camera;webcam;microphone;mic;speaker;audio;test;meeting;call;
