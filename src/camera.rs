@@ -85,7 +85,8 @@ impl Preview {
                 .map_err(|_| format!("Missing GStreamer element: {name}"))
         };
         let decode = make("decodebin")?;
-        let convert = make("videoconvertscale")?;
+        let convert = make("videoconvert")?;
+        let scale = make("videoscale")?;
         // Mirror, like every meeting app does for self-view.
         let flip = gst::ElementFactory::make("videoflip")
             .property_from_str("video-direction", "horiz")
@@ -105,10 +106,10 @@ impl Preview {
 
         let pipeline = gst::Pipeline::new();
         pipeline
-            .add_many([&src, &decode, &convert, &flip, sink.upcast_ref()])
+            .add_many([&src, &decode, &convert, &scale, &flip, sink.upcast_ref()])
             .map_err(|e| e.to_string())?;
         src.link(&decode).map_err(|e| e.to_string())?;
-        gst::Element::link_many([&convert, &flip, sink.upcast_ref()]).map_err(|e| e.to_string())?;
+        gst::Element::link_many([&convert, &scale, &flip, sink.upcast_ref()]).map_err(|e| e.to_string())?;
 
         let convert_weak = convert.downgrade();
         decode.connect_pad_added(move |_, pad| {

@@ -142,7 +142,6 @@ fn build_ui(app: &gtk::Application) {
 
     // ---- Camera ----------------------------------------------------------
     let picture = gtk::Picture::new();
-    picture.set_content_fit(gtk::ContentFit::Contain);
     picture.set_vexpand(true);
     picture.set_size_request(-1, 280);
     let cam_status = gtk::Label::new(Some("Starting camera…"));
