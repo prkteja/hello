@@ -1,4 +1,4 @@
-# Meeting Check
+# Hello
 
 A small GTK4 app for checking your setup before an online meeting:
 
@@ -20,6 +20,6 @@ cargo build --release
 ## Install (per user)
 
 ```sh
-install -Dm755 target/release/meetcheck ~/.local/bin/meetcheck
-install -Dm644 data/io.github.meetcheck.desktop ~/.local/share/applications/io.github.meetcheck.desktop
+install -Dm755 target/release/hello ~/.local/bin/hello
+install -Dm644 data/io.github.hello.desktop ~/.local/share/applications/io.github.hello.desktop
 ```

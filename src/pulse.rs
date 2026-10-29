@@ -50,7 +50,7 @@ impl Pulse {
     /// defaults or volumes change.
     pub fn connect(on_change: impl Fn(&Snapshot) + 'static) -> Option<Rc<Self>> {
         let mainloop = Mainloop::new(None)?;
-        let ctx = Rc::new(RefCell::new(Context::new(&mainloop, "Meeting Check")?));
+        let ctx = Rc::new(RefCell::new(Context::new(&mainloop, "Hello")?));
         let snapshot = Rc::new(RefCell::new(Snapshot::default()));
         let listener: Listener = Rc::new(on_change);
         let refresh_queued = Rc::new(Cell::new(false));

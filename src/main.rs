@@ -11,7 +11,7 @@ use gtk::{gio, glib};
 
 use pulse::{Device, Kind, Pulse, Snapshot};
 
-const APP_ID: &str = "io.github.meetcheck";
+const APP_ID: &str = "io.github.hello";
 const RECORD_SECONDS: u32 = 4;
 
 fn main() -> glib::ExitCode {
@@ -129,7 +129,7 @@ fn label(text: &str) -> gtk::Label {
 fn build_ui(app: &gtk::Application) {
     let window = gtk::ApplicationWindow::builder()
         .application(app)
-        .title("Meeting Check")
+        .title("Hello")
         .default_width(680)
         .default_height(640)
         .build();
@@ -298,7 +298,7 @@ fn build_ui(app: &gtk::Application) {
     {
         let recorder = recorder.clone();
         record_btn.connect_clicked(move |btn| {
-            let path = glib::user_runtime_dir().join("meetcheck-mic-test.wav");
+            let path = glib::user_runtime_dir().join("hello-mic-test.wav");
             let b = btn.clone();
             let slot = recorder.clone();
             let play_path = path.clone();
